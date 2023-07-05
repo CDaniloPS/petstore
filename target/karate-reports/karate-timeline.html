@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"userCreate\/user[1:8]","start":1688571357252,"end":1688571361556,"title":"userCreate\/user[1:8] 10:35:57.252-10:36:01.556 create a user and then get it by username"},{"id":2,"group":1,"content":"userCreate\/user[2:37]","start":1688571361646,"end":1688571362039,"title":"userCreate\/user[2:37] 10:36:01.646-10:36:02.039 get user with username not found"},{"id":3,"group":1,"content":"userCreate\/user[3:46]","start":1688571362083,"end":1688571362791,"title":"userCreate\/user[3:46] 10:36:02.083-10:36:02.791 update name and email by username and then get it"},{"id":4,"group":1,"content":"userCreate\/user[4:74]","start":1688571362825,"end":1688571363196,"title":"userCreate\/user[4:74] 10:36:02.825-10:36:03.196 delete a user"},{"id":5,"group":1,"content":"userCreate\/user[5:82]","start":1688571363231,"end":1688571363570,"title":"userCreate\/user[5:82] 10:36:03.231-10:36:03.570 delete a user with username not found"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
