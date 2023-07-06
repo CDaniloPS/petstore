@@ -1,0 +1,5 @@
+- Los servicios de petstore requieren ser arreglados ya que permiten acciones que no deberian,
+- Al crear usuarios permite crear el mismo usuario indefinidas veces sin tener en cuenta que exista el mismo username.
+- la busqueda muestra al primer usuario encontrado si existen varios usuarios con el mismo username.
+- La eliminacion la realiza uno por ves si existe el mismo username varias veces.
+- Los escenarios identificados en el ambiente de pruebas se realizaron con satisfaccion en cada caso. 
